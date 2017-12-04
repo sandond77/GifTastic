@@ -27,6 +27,7 @@ $(document).on("click", ".gifButton", function addGifs(){
 	}).done(function(response) {
 
 		var results = response.data;
+		console.log(results)
 
 		for (var i = 0; i < results.length; i++) {
 			still = results[i].images.fixed_height_still.url; //grabs the still gif url
@@ -35,6 +36,7 @@ $(document).on("click", ".gifButton", function addGifs(){
 			var gif = $("<img>");
 			var p = $("<p>");
 			var rating = $("<h4>")
+			
 			$(rating).append("Rating: " + results[i].rating)
 			$(p).append(gif);
 			$(gif).attr("src", still);
@@ -43,7 +45,6 @@ $(document).on("click", ".gifButton", function addGifs(){
 			$(gif).attr("status", "still");
 			$(gif).attr("class", "gif");
 			$(p).prepend(rating);
-			// $(".insert").append(p)
 			$("#gif"+i).append(p)
 		}
 	})
