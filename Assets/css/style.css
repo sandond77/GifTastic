@@ -6905,3 +6905,7 @@ h1{
   font-family: 'Satisfy', cursive;
   font-size: 3vw;
 }
+
+.btn{
+  margin:10px;
+}
